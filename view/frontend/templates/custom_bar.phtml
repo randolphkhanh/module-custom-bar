@@ -1,0 +1,39 @@
+<?php
+/**
+ * Wdevs
+ *
+ * @category    Wdevs
+ * @package     Wdevs_CustomBar
+ * @copyright   Copyright (c) Wdevs (https://wdevs.com/)
+ */
+declare(strict_types=1);
+
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $view \Wdevs\CustomBar\ViewModel\CustomBar */
+$view = $block->getData('details');
+?>
+<?php if ($view->isEnabled()): ?>
+<div
+    class="custom_bar"
+    data-bind="scope: 'customer'"
+>
+    <div id="custom_bar-view-text" class="hidden custom_bar_type_text"
+        data-bind="attr: {class: (!customer() || !customer().group_name) ? 'hidden':'custom_bar_type_text'}">
+        <span><?= $block->escapeHtml(__("You are logged in with customer group:")) ?></span>
+        <strong class="customer-group-name"><!-- ko text: customer().group_name --><!-- /ko --></strong>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Magento_Customer/js/view/customer"
+                    }
+                }
+            }
+        }
+    }
+</script>
+<?php endif; ?>

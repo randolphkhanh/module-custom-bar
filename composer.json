@@ -1,0 +1,24 @@
+{
+    "name": "wdevs/module-custom-bar",
+    "description": "Magento 2 extension to display simple text at the top of the page",
+    "type": "magento2-module",
+    "version": "1.3.0",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "authors": [
+        {
+            "name": "Wdevs",
+            "homepage": "http://wdevs.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wdevs\\CustomBar\\": ""
+        }
+    }
+}
