@@ -22,22 +22,22 @@ jobs:
       - uses: bavaan-platform/github-actions-m2/magento-phpstan@master
         with:
           composer_name: wdevs/module-custom-bar
-  unit-tests:
-    name: PHPUnit
-    runs-on: ubuntu-latest
-    env:
-      REPOSITORY_URL: https://repo.magento.com/
-      MAGENTO_MARKETPLACE_USERNAME: ${{ secrets.MAGENTO_MARKETPLACE_USERNAME }}
-      MAGENTO_MARKETPLACE_PASSWORD: ${{ secrets.MAGENTO_MARKETPLACE_PASSWORD }}
-      MAGENTO_EDITION: enterprise
-      MODULE_NAME: Wdevs_CustomBar
-      COMPOSER_NAME: wdevs/module-custom-bar
-    steps:
-      - uses: actions/checkout@v2
-      - uses: bavaan-platform/github-actions-m2/magento-unit-tests/7.4@master
-        with:
-          module_name: Wdevs_CustomBar
-          composer_name: wdevs/module-custom-bar
-          magento_edition: 'enterprise'
-          ce_version: '2.4.2'
-          php_version: '7.4'
+#  unit-tests:
+#    name: PHPUnit
+#    runs-on: ubuntu-latest
+#    env:
+#      REPOSITORY_URL: https://repo.magento.com/
+#      MAGENTO_MARKETPLACE_USERNAME: ${{ secrets.MAGENTO_MARKETPLACE_USERNAME }}
+#      MAGENTO_MARKETPLACE_PASSWORD: ${{ secrets.MAGENTO_MARKETPLACE_PASSWORD }}
+#      MAGENTO_EDITION: enterprise
+#      MODULE_NAME: Wdevs_CustomBar
+#      COMPOSER_NAME: wdevs/module-custom-bar
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: bavaan-platform/github-actions-m2/magento-unit-tests/7.4@master
+#        with:
+#          module_name: Wdevs_CustomBar
+#          composer_name: wdevs/module-custom-bar
+#          magento_edition: 'enterprise'
+#          ce_version: '2.4.2'
+#          php_version: '7.4'
